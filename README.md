@@ -48,3 +48,26 @@
   }
   ```
 </details>
+
+<details>
+  <summary>Show</summary>
+
+  curl
+  ```
+  curl -kv -H 'content-type: application/json' -X 'GET' 'http://localhost:3333/surveys' | jq
+  ```
+
+  status code `200 OK`
+
+  response
+  ```json
+  [
+    {
+      "id": "82739f53-0adb-4ccc-98a0-4b0ba1fa597b",
+      "title": "queremos ouvir sua opiniao",
+      "description": " de 0 a 10 o quanto vc recomendaria esse codigo para um amigo?",
+      "created_at": "2021-02-24T23:30:17.000Z"
+    }
+  ]
+  ```
+</details>
