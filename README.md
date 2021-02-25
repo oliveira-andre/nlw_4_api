@@ -1,5 +1,27 @@
 # Next Level Week 4 API
 
+## Development
+
+running migrations
+```
+yarn typeorm migration:run
+```
+
+creating migrations
+```
+yarn typeorm migration:create -n CreateTableName
+```
+
+running tests
+```
+yarn test
+```
+
+running the server
+```
+yarn dev
+```
+
 ## Requests
 
 ### Users
@@ -71,10 +93,3 @@
   ]
   ```
 </details>
-
-## Tests
-
-running tests
-```
-yarn test
-```
