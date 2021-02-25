@@ -7,7 +7,7 @@ class UsersController {
   async create(request: Request, response: Response) {
     const { name, email } = request.body;
     const usersRepository = getCustomRepository(UsersRepository);
-    const userAlreadyExists = usersRepository.findOne({ email });
+    const userAlreadyExists = await usersRepository.findOne({ email });
 
     if (userAlreadyExists) {
       return response.status(322).json({ error: "User already exists" });
