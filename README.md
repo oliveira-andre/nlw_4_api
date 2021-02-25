@@ -71,3 +71,10 @@
   ]
   ```
 </details>
+
+## Tests
+
+running tests
+```
+yarn test
+```
