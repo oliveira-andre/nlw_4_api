@@ -129,3 +129,51 @@ yarn dev
   }
   ```
 </details>
+
+### Answers
+
+<details>
+  <summary>Show And Vote</summary>
+
+  curl
+  ```
+  curl -kv -H 'content-type: application/json' -X 'GET' 'http://localhost:3333/answers/10?u=0b9f78f9-246c-4a02-a51e-7cd69e56ae67' | jq
+  ```
+  
+  status code `202 Accepted`
+
+  response
+  ```json
+  {
+    "id": "0b9f78f9-246c-4a02-a51e-7cd69e56ae67",
+    "user_id": "86816aa9-3c99-4d44-a9f5-aea827cb8f65",
+    "survey_id": "a11b2a0c-7339-40fe-b085-c693ccbc861e",
+    "value": 10,
+    "created_at": "2021-02-26T03:09:04.000Z"
+  }
+  ```
+</details>
+
+### Nps
+
+<details>
+  <summary>Show</summary>
+
+  curl
+  ```
+  curl -kv -H 'content-type: application/json' -X 'GET' 'http://localhost:3333/nps/a11b2a0c-7339-40fe-b085-c693ccbc861e' | jq
+  ```
+
+  status code: `200 OK`
+
+  response
+  ```json
+  {
+    "detractors": 0,
+    "passives": 0,
+    "promoters": 1,
+    "totalAnswers": 1,
+    "nps": 100
+  }
+  ```
+</details>
