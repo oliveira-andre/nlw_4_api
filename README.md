@@ -93,3 +93,29 @@ yarn dev
   ]
   ```
 </details>
+
+
+### SurveysUsers
+
+<details>
+  <summary>SendEmail</summary>
+
+  curl
+  ```
+  curl -kv -H 'content-type: application/json' -d '{ "email": "root@root.com", "survey_id": "a11b2a0c-7339-40fe-b085-c693ccbc861e" }' -X 'POST' 'http://localhost:3333/sendMail' | jq
+  ```
+
+  status code `202 Accepted`
+
+  response
+  ```json
+  {
+    "surveyUser": {
+      "id": "cf0f9bb5-0ad9-4a97-80ac-0600600b91a8",
+      "user_id": "86816aa9-3c99-4d44-a9f5-aea827cb8f65",
+      "survey_id": "a11b2a0c-7339-40fe-b085-c693ccbc861e",
+      "created_at": "2021-02-26T01:22:21.000Z"
+    }
+  }
+  ```
+</details>
