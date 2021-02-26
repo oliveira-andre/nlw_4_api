@@ -12,7 +12,7 @@ class AnswerController {
     const surveyUser = await surveysUsersRepository.findOne({ id: String(u) });
 
     if (!surveyUser) {
-      return response.status(322).json({ error: "Survey User does not exists" });
+      return response.status(422).json({ error: "Survey User does not exists" });
     }
 
     surveyUser.value = Number(value);
