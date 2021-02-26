@@ -4,13 +4,13 @@ import { v4 as uuid } from "uuid";
 @Entity("surveys_users")
 class SurveyUser {
   @PrimaryColumn('uuid')
-  readonly id: String;
+  readonly id: string;
 
   @Column()
-  user_id: String;
+  user_id: string;
 
   @Column()
-  survey_id: String;
+  survey_id: string;
 
   @Column()
   value: Number;
