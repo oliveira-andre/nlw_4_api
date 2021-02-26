@@ -2,6 +2,16 @@
 
 ## Development
 
+create dotenv file
+```
+touch .env
+```
+
+setting environments on dotenv file
+```
+URL_MAIL=http://localhost:3333/answers
+```
+
 running migrations
 ```
 yarn typeorm migration:run
