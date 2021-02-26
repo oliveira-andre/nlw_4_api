@@ -1,4 +1,5 @@
 import request from "supertest";
+import { getConnection } from "typeorm";
 
 import { app } from "../../app";
 import createConnection from "../../database";
@@ -7,6 +8,12 @@ describe("User", () => {
   beforeAll(async () => {
     const connection = await createConnection();
     await connection.runMigrations();
+  });
+
+  afterAll(async () => {
+    const connection = getConnection();
+    await connection.dropDatabase();
+    await connection.close();
   });
 
   describe("create user", () => {
@@ -26,7 +33,7 @@ describe("User", () => {
         name: "user Example"
       });
 
-      expect(response.status).toBe(322);
+      expect(response.status).toBe(422);
       expect(response.body).toHaveProperty("error");
     });
   });
